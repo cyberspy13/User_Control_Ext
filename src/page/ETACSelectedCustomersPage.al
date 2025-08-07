@@ -1,9 +1,9 @@
 page 50150 ETACSelectedCustomersPage
 {
     ApplicationArea = All;
-    Caption = 'Selected Customers';
+    Caption = 'C&V Control Management';
     PageType = List;
-    SourceTable = ETACSelectedCustomersTable;
+    SourceTable = ETAC_CustVendControlMngmTable;
     UsageCategory = Lists;
 
     layout
@@ -12,23 +12,53 @@ page 50150 ETACSelectedCustomersPage
         {
             repeater(General)
             {
-                field("No"; Rec."No.")
+                field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.', Comment = '%';
+                    ApplicationArea = All;
+                    Caption = 'No.';
+                    ShowMandatory = true;
+                }
+
+                field("User ID"; Rec."User ID")
+                {
+                    ApplicationArea = All;
+                    Caption = 'User ID';
+                    ShowMandatory = true;
+                }
+                field("Source Table";Rec."Source Table")
+                {
+                    
                 }
                 field("Customer No."; Rec."Customer No.")
                 {
-                    ToolTip = 'Specifies the value of the Customer No. field.', Comment = '%';
+                    ApplicationArea = All;
+                    Caption = 'Customer No.';
                 }
                 field("Customer Name"; Rec."Customer Name")
                 {
-                    ToolTip = 'Specifies the value of the Customer Name field.', Comment = '%';
+                    ApplicationArea = All;
+                    Caption = 'Customer Name';
+                }
+                field("Vendor No."; Rec."Vendor No.")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Vendor No.';
+                }
+                field("Vendor Name"; Rec."Vendor Name")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Vendor Name';
                 }
                 field("Select Customer"; Rec."Select Customer")
                 {
-                    ToolTip = 'Specifies whether the customer is selected.', Comment = '%';
+                    ApplicationArea = All;
+                    Caption = 'Select All Customer';
                 }
-
+                field("Select Vendor"; Rec."Select Vendor")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Select All Vendor';
+                }
             }
         }
     }
